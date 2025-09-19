@@ -1,0 +1,33 @@
+models:
+  - name: enriched_products
+    description: >
+      Product catalog enhanced with supply cost data and profitability calculations.
+      Combines product details with cost information for margin analysis.
+    columns:
+      - name: product_id
+        description: Unique identifier for each product
+        data_tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: Display name of the product
+      - name: product_type
+        description: Category of product (e.g., jaffle, beverage)
+      - name: product_description
+        description: Detailed description of the product
+      - name: product_price
+        description: Retail price of the product in USD
+      - name: is_food_item
+        description: Boolean flag indicating if product is food
+      - name: is_drink_item
+        description: Boolean flag indicating if product is a beverage
+      - name: supply_cost
+        description: Total cost of supplies needed to make this product
+      - name: unit_profit
+        description: Profit per unit (price minus supply cost)
+      - name: profit_margin_pct
+        description: Profit margin as percentage of price
+      - name: price_tier
+        description: Price classification (Premium, Standard, Value)
+      - name: margin_tier
+        description: Profitability classification (High Margin, Good Margin, Low Margin)

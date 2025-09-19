@@ -1,0 +1,31 @@
+models:
+  - name: enriched_orders
+    description: >
+      Order data enriched with calculated profitability metrics, size classifications, and timing details.
+      Adds business context to raw order information.
+    columns:
+      - name: order_id
+        description: Unique identifier for each order
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer who placed this order
+      - name: location_id
+        description: Store location where order was placed
+      - name: order_total
+        description: Total order amount including tax
+      - name: ordered_at
+        description: Timestamp when order was placed
+      - name: order_cost
+        description: Total cost to fulfill this order
+      - name: gross_profit
+        description: Order revenue minus order cost
+      - name: margin_percent
+        description: Gross profit as percentage of order total
+      - name: order_size
+        description: Categorization of order size (Large, Medium, Small)
+      - name: order_type
+        description: Type of order based on items (Combo, Food Only, Drink Only, Other)
+      - name: order_hour
+        description: Hour of day when order was placed

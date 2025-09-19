@@ -29,6 +29,6 @@ select
     min(ordered_at) as first_order_in_period,
     max(ordered_at) as last_order_in_period
 
-from {{ ref('silver_customer_orders') }}
+from {{ ref('customer_orders_mart') }}
 group by 1, 2, 3, 4, 5
 order by total_spent_period desc

@@ -1,0 +1,48 @@
+models:
+  - name: customer_orders_mart
+    description: >
+      Customer orders data mart combining enriched customer data with enriched order details.
+      Creates a comprehensive view joining customer context with individual order behavior.
+      This mart enables analysis of order patterns in relation to customer characteristics.
+    columns:
+      - name: order_id
+        description: Unique identifier for each order
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer who placed this order
+        data_tests:
+          - not_null
+      - name: customer_name
+        description: Full name of the customer
+      - name: customer_type
+        description: Classification as 'new' or 'returning' customer
+      - name: spend_tier
+        description: Customer's spend classification (High Value, Medium Value, Low Value)
+      - name: recency_status
+        description: Customer's engagement level (Active, At Risk, Inactive)
+      - name: customer_avg_order_value
+        description: Customer's average order value across all their orders
+      - name: order_total
+        description: Total amount for this specific order
+      - name: ordered_at
+        description: Timestamp when this order was placed
+      - name: gross_profit
+        description: Gross profit for this order (revenue minus cost)
+      - name: margin_percent
+        description: Gross profit margin percentage for this order
+      - name: order_size
+        description: Size classification for this order (Large, Medium, Small)
+      - name: order_type
+        description: Type of order based on items (Combo, Food Only, Drink Only, Other)
+      - name: order_hour
+        description: Hour of day when order was placed
+      - name: count_lifetime_orders
+        description: Total number of orders this customer has ever placed
+      - name: lifetime_spend_pretax
+        description: Customer's total lifetime spend before taxes
+      - name: customer_tenure_days
+        description: Number of days since customer's first order
+      - name: order_vs_customer_avg
+        description: How this order compares to customer's average (Above Average, Below Average, Typical)

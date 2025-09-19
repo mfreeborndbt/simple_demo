@@ -1,0 +1,35 @@
+models:
+  - name: enriched_customers
+    description: >
+      Customer data enriched with calculated fields for tenure, recency, and spend classifications.
+      Builds on upstream customer data with basic analytical transformations.
+    columns:
+      - name: customer_id
+        description: Unique identifier for each customer
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: Full name of the customer
+      - name: customer_type
+        description: Classification as 'new' or 'returning' customer
+      - name: count_lifetime_orders
+        description: Total number of orders placed by this customer
+      - name: lifetime_spend_pretax
+        description: Total amount spent by customer before taxes
+      - name: lifetime_spend
+        description: Total amount spent by customer including taxes
+      - name: first_ordered_at
+        description: Timestamp of customer's first order
+      - name: last_ordered_at
+        description: Timestamp of customer's most recent order
+      - name: customer_tenure_days
+        description: Number of days since customer's first order
+      - name: days_since_last_order
+        description: Number of days since customer's last order
+      - name: avg_order_value
+        description: Average order value for this customer (pre-tax)
+      - name: spend_tier
+        description: Classification of customer spend level (High Value, Medium Value, Low Value)
+      - name: recency_status
+        description: Customer engagement level based on recency (Active, At Risk, Inactive)

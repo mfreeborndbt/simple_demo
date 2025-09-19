@@ -1,0 +1,33 @@
+models:
+  - name: enriched_order_items
+    description: >
+      Individual order items with item-level profitability calculations.
+      Provides granular profit analysis for each item sold.
+    columns:
+      - name: order_item_id
+        description: Unique identifier for each order item
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: Order that contains this item
+      - name: product_id
+        description: Product identifier for this item
+      - name: ordered_at
+        description: Timestamp when this item was ordered
+      - name: product_name
+        description: Name of the product for this item
+      - name: product_price
+        description: Price of this product
+      - name: is_food_item
+        description: Boolean flag indicating if this item is food
+      - name: is_drink_item
+        description: Boolean flag indicating if this item is a beverage
+      - name: supply_cost
+        description: Cost to supply this individual item
+      - name: item_profit
+        description: Profit for this individual item
+      - name: item_margin_pct
+        description: Profit margin percentage for this item
+      - name: profit_tier
+        description: Profitability classification (High Profit, Good Profit, Low Profit)

@@ -1,0 +1,26 @@
+models:
+- name: agg_order_items
+  description: This model aggregates order item data to provide a summary of each
+    order, including total items, revenue, supply cost, profit, and item margins.
+    It also categorizes items into food and drink.
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+    data_tests:
+      - unique
+      - not_null
+  - name: total_items
+    description: The total number of items in the order.
+  - name: total_revenue
+    description: The total revenue generated from the order.
+  - name: total_supply_cost
+    description: The total cost of supplies for the order.
+  - name: total_profit
+    description: The total profit generated from the order.
+  - name: avg_margin_pct
+    description: The average margin percentage of items in the order, rounded to one
+      decimal place.
+  - name: total_food_items
+    description: The total number of food items in the order.
+  - name: total_drink_items
+    description: The total number of drink items in the order.

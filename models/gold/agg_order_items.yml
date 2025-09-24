@@ -1,0 +1,23 @@
+models:
+- name: agg_order_items
+  description: This model aggregates order items to provide a summary of each order,
+    including total items, revenue, supply cost, profit, average margin, and the last
+    order date.
+  columns:
+  - name: order_id
+    description: A unique identifier for each order.
+    data_tests:
+      - unique
+      - not_null
+  - name: total_items
+    description: The total number of items in the order.
+  - name: total_revenue
+    description: The total revenue generated from the order.
+  - name: total_supply_cost
+    description: The total cost of supplies for the order.
+  - name: total_profit
+    description: The total profit earned from the order.
+  - name: avg_margin_pct
+    description: The average profit margin percentage for the order.
+  - name: last_ordered_at
+    description: The timestamp of the most recent item ordered in the order.
